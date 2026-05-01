@@ -6,6 +6,12 @@ A lightweight whole-slide pathology viewer built with Gradio, OpenSlide, and Ope
 
 Live demo: [Pathology Whole-Slide Viewer on Hugging Face Spaces](https://huggingface.co/spaces/Pial2233/Pathology_Whole-Slide_Viewer)
 
+## Interface
+
+![Main Interface](Screenshot_1.png)
+
+![Viewer Example](Screenshot_2.png)
+
 ## Features
 
 - Upload and open pathology whole-slide images locally
@@ -60,7 +66,7 @@ python app.py
 ## How It Works
 
 - `app.py` loads slides with OpenSlide
-- A small local tile server exposes Deep Zoom tiles on `127.0.0.1:8001`
+- FastAPI routes in the same app expose Deep Zoom metadata and tiles
 - OpenSeadragon renders the interactive slide viewer inside the Gradio app
 - Slide metadata and associated images are displayed alongside the viewer
 
@@ -68,7 +74,7 @@ python app.py
 
 - Large slide files can take time to open.
 - On Windows, antivirus or file locking can temporarily block uploaded files from being read.
-- The viewer runs a local tile server on port `8001`, so that port must be available.
+- Runtime upload capacity depends on available disk and memory in the local environment or hosting platform.
 
 ## Project Structure
 
